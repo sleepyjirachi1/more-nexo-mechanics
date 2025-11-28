@@ -1,10 +1,11 @@
 plugins {
     java
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("maven-publish")
 }
 
-group = "me.Autumn"
-version = "1.0-SNAPSHOT"
+group = "com.github.sleepyjirachi1"
+version = "0.2.1"
 
 java {
     toolchain {
@@ -38,8 +39,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.36")
 }
 
-tasks.shadowJar {
-    archiveBaseName.set("more-nexo-mechanics")
-    archiveClassifier.set("")
-    archiveVersion.set(version.toString())
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
 }
