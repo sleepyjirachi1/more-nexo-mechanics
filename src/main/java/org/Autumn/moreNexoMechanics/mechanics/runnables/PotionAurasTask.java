@@ -86,7 +86,7 @@ public class PotionAurasTask implements Runnable {
 
             PotionEffect effect = new PotionEffect(
                     type,
-                    80, // Permanent (until removed)
+                    360, // 18 seconds
                     amplifier,
                     true,
                     false,

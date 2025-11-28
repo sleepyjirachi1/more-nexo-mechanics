@@ -33,7 +33,6 @@ public class PotionAuras extends Mechanic {
                 potionEffects.put(effectType, amplifier);
             }
         }
-
     }
 
 }

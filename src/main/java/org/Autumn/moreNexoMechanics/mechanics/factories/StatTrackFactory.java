@@ -1,6 +1,6 @@
 package org.Autumn.moreNexoMechanics.mechanics.factories;
 
-import org.Autumn.moreNexoMechanics.mechanics.PotionAuras;
+import org.Autumn.moreNexoMechanics.mechanics.StatTrack;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;
@@ -10,21 +10,23 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PotionAurasFactory extends MechanicFactory {
+public class StatTrackFactory extends MechanicFactory {
 
-    public PotionAurasFactory() { super("potion_auras"); }
+    public StatTrackFactory() { super("stat_track"); }
 
     @Override @Nullable
-    public PotionAuras getMechanic(String itemID) {
-        return (PotionAuras) super.getMechanic(itemID);
+    public StatTrack getMechanic(String itemID) {
+        return (StatTrack) super.getMechanic(itemID);
     }
 
     @Override @Nullable
-    public PotionAuras getMechanic(ItemStack itemStack) { return (PotionAuras) super.getMechanic(itemStack); }
+    public StatTrack getMechanic(ItemStack itemStack) {
+        return (StatTrack) super.getMechanic(itemStack);
+    }
 
     @Override
     public @Nullable Mechanic parse(@NotNull ConfigurationSection configSect) {
-        PotionAuras mechanic = new PotionAuras(this, configSect);
+        StatTrack mechanic = new StatTrack(this, configSect);
         addToImplemented(mechanic);
         return mechanic;
     }

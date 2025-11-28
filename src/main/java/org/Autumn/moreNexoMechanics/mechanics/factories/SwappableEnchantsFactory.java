@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class SwappableEnchantsFactory extends MechanicFactory {
 
-    public SwappableEnchantsFactory() { super("SwappableEnchants"); }
+    public SwappableEnchantsFactory() { super("swappable_enchants"); }
 
     @Override @Nullable
     public SwappableEnchants getMechanic(String itemID) {

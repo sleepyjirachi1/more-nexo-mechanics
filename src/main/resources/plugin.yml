@@ -1,6 +1,6 @@
 name: MoreNexoMechanics
-version: ${project.version}
-main: org.Autumn.moreNexoMechanics.MoreNexoMechanics
+version: '0.2.0'
+main: org.Autumn.moreNexoMechanics.Main
 api-version: '1.21'
 author: "Autumn (discord - sleepyjirachi1)"
 depend:
