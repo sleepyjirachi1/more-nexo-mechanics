@@ -22,7 +22,6 @@ public class SwappableEnchants extends Mechanic {
         if (section.contains("lore-based")) { loreLineIdx = Math.max(0, section.getInt("lore-based", 1) - 1); }
         else { loreLineIdx = -1; }
 
-
         // Parse for 'enchants'
         enchantTypes = new LinkedHashMap<>();
 

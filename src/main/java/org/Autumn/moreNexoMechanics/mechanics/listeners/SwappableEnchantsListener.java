@@ -53,6 +53,7 @@ public class SwappableEnchantsListener implements Listener {
         if (!canTrigger(player)) return;
 
         ItemStack item = player.getInventory().getItemInMainHand();
+
         SwappableEnchants mechanic = getValidMechanic(item);
         if (mechanic == null) return;
 

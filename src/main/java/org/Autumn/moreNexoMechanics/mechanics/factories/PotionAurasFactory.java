@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class PotionAurasFactory extends MechanicFactory {
 
-    public PotionAurasFactory() { super("PotionAuras"); }
+    public PotionAurasFactory() { super("potion_auras"); }
 
     @Override @Nullable
     public PotionAuras getMechanic(String itemID) {
@@ -20,9 +20,7 @@ public class PotionAurasFactory extends MechanicFactory {
     }
 
     @Override @Nullable
-    public PotionAuras getMechanic(ItemStack itemStack) {
-        return (PotionAuras) super.getMechanic(itemStack);
-    }
+    public PotionAuras getMechanic(ItemStack itemStack) { return (PotionAuras) super.getMechanic(itemStack); }
 
     @Override
     public @Nullable Mechanic parse(@NotNull ConfigurationSection configSect) {
