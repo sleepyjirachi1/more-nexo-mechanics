@@ -96,7 +96,7 @@ public class StatTrackListener implements Listener {
         queueLoreUpdate(item, () -> setLore(item, mechanic, statName, newValue));
     }
 
-    private void setLore(ItemStack item, StatTrack mechanic, String statName, long value) {
+    public void setLore(ItemStack item, StatTrack mechanic, String statName, long value) {
         StatTrack.StatInfo info = mechanic.getStat(statName);
         if (info == null) return;
 

@@ -29,7 +29,7 @@ public final class Main extends JavaPlugin {
 
     private SwappableEnchantsFactory swappableEnchantsFactory;
     private PotionAurasFactory potionAurasFactory;
-    private StatTrackFactory statTrackFactory;
+    public StatTrackFactory statTrackFactory;
 
     @Override
     public void onEnable() {
