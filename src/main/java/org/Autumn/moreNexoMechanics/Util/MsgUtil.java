@@ -21,7 +21,15 @@ public class MsgUtil {
 
     public static final String PREFIX = ChatColor.AQUA + "[MoreNexoMechanics] " + ChatColor.RESET;
 
-    public static void msg(@NotNull CommandSender sender, String contents) { sender.sendMessage(PREFIX + contents); }
-    public static boolean msgReturnsTrue(@NotNull CommandSender sender, String contents) { sender.sendMessage(PREFIX + contents); return true; }
-    public static boolean msgReturnsFalse(@NotNull CommandSender sender, String contents) { sender.sendMessage(PREFIX + contents); return false; }
+    public static void msg(@NotNull CommandSender sender, String contents) {
+        sender.sendMessage(PREFIX + contents);
+    }
+    public static boolean msgReturnsTrue(@NotNull CommandSender sender, String contents) {
+        sender.sendMessage(PREFIX + contents);
+        return true;
+    }
+    public static boolean msgReturnsFalse(@NotNull CommandSender sender, String contents) {
+        sender.sendMessage(PREFIX + contents);
+        return false;
+    }
 }

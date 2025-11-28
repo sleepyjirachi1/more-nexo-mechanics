@@ -34,7 +34,6 @@ public class PotionAurasTask implements Runnable {
     }
 
     @Override
-    // TODO: DANGER - IT RUNS EVERY 3.5 SECONDS, HEAVILY OPTIMIZE
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {
             Map<String, ItemStack> equippedSlots = getLabeledInventorySlots(player);
@@ -80,9 +79,12 @@ public class PotionAurasTask implements Runnable {
             int amplifier = entry.getValue() - 1;
 
             NamespacedKey key = NamespacedKey.minecraft(name);
-            // TODO: DANGER - WHY IS .get(key) WORRIED ABOUT A NULL POINTER EXCEPTION
+
             PotionEffectType type = Bukkit.getRegistry(PotionEffectType.class).get(key);
-            if (type == null) { Logs.logWarn("Unknown potion effect type: " + name); continue; }
+            if (type == null) {
+                Logs.logWarn("Unknown potion effect type: " + name);
+                continue;
+            }
 
             PotionEffect effect = new PotionEffect(
                     type,
