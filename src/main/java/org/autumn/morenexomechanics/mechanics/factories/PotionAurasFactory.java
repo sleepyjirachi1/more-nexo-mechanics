@@ -1,6 +1,6 @@
-package org.Autumn.moreNexoMechanics.mechanics.factories;
+package org.autumn.morenexomechanics.mechanics.factories;
 
-import org.Autumn.moreNexoMechanics.mechanics.PotionAuras;
+import org.autumn.morenexomechanics.mechanics.PotionAuras;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;

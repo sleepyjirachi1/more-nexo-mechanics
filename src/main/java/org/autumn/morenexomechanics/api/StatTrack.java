@@ -1,8 +1,11 @@
-package org.Autumn.moreNexoMechanics.mechanics;
+package org.autumn.morenexomechanics.api;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;
+
 import org.bukkit.configuration.ConfigurationSection;
+
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,6 +18,13 @@ public class StatTrack extends Mechanic {
 
     private final Map<String, StatInfo> stats = new HashMap<>();
 
+    /**
+     * WARNING: Constructor logic is implicit, it is not designed for manual instantiation.
+     * --
+     * INSTEAD: StatTrack mechanic = MechanicFactories.getStatTrackFactory().getMechanic(...)
+     *          Who's overloads allow construction with either ItemStack or NexoItem ID.
+     */
+    @ApiStatus.Internal
     public StatTrack(@Nullable MechanicFactory factory, @NotNull ConfigurationSection section) {
         super(factory, section);
 

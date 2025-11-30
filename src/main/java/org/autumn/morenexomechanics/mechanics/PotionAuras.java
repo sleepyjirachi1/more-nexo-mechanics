@@ -1,4 +1,4 @@
-package org.Autumn.moreNexoMechanics.mechanics;
+package org.autumn.morenexomechanics.mechanics;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;
@@ -18,6 +18,7 @@ public class PotionAuras extends Mechanic {
     public final Map<String, Integer> potionEffects;
 
     public PotionAuras(@Nullable MechanicFactory factory, @NotNull ConfigurationSection section) {
+        /* Use parent constructor */
         super(factory, section);
 
         // Read "slots" section

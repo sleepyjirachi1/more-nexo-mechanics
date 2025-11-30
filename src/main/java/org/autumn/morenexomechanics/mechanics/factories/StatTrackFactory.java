@@ -1,6 +1,6 @@
-package org.Autumn.moreNexoMechanics.mechanics.factories;
+package org.autumn.morenexomechanics.mechanics.factories;
 
-import org.Autumn.moreNexoMechanics.mechanics.StatTrack;
+import org.autumn.morenexomechanics.api.StatTrack;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;
@@ -12,7 +12,9 @@ import org.jetbrains.annotations.Nullable;
 
 public class StatTrackFactory extends MechanicFactory {
 
-    public StatTrackFactory() { super("stat_track"); }
+    public StatTrackFactory() {
+        super("stat_track");
+    }
 
     @Override @Nullable
     public StatTrack getMechanic(String itemID) {

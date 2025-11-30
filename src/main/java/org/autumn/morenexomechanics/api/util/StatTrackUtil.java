@@ -1,4 +1,6 @@
-package org.Autumn.moreNexoMechanics.Util;
+package org.autumn.morenexomechanics.api.util;
+
+import org.autumn.morenexomechanics.api.StatTrack;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -6,7 +8,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+
 import lombok.experimental.UtilityClass;
+
+import java.util.List;
 
 @UtilityClass
 public final class StatTrackUtil {
@@ -50,4 +58,25 @@ public final class StatTrackUtil {
         set(item, statName, next);
         return next;
     }
+
+    public static void setLore(ItemMeta meta, StatTrack mechanic, String statName, long value) {
+        StatTrack.StatInfo info = mechanic.getStat(statName);
+        if (info == null) return;
+
+        List<Component> lore = meta.lore();
+        if (lore == null) return;
+
+        int line = info.line();
+        if (line < 0 || line >= lore.size()) return;
+
+        // Replace %value% in configured template and parse minimessage
+        String formatted = info.format().replace("%value%", String.valueOf(value));
+        Component newLine = MiniMessage.miniMessage().
+                deserialize(formatted)
+                .decoration(TextDecoration.ITALIC, false);
+
+        lore.set(line, newLine);
+        meta.lore(lore);
+    }
+
 }

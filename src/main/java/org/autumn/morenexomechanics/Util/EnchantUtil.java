@@ -1,4 +1,4 @@
-package org.Autumn.moreNexoMechanics.Util;
+package org.autumn.morenexomechanics.Util;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;

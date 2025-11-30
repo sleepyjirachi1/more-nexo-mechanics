@@ -1,14 +1,10 @@
-package org.Autumn.moreNexoMechanics.mechanics.listeners;
+package org.autumn.morenexomechanics.mechanics.listeners;
 
-import org.Autumn.moreNexoMechanics.mechanics.StatTrack;
-import org.Autumn.moreNexoMechanics.mechanics.factories.StatTrackFactory;
-import org.Autumn.moreNexoMechanics.Util.StatTrackUtil;
+import org.autumn.morenexomechanics.api.StatTrack;
+import org.autumn.morenexomechanics.mechanics.factories.StatTrackFactory;
+import org.autumn.morenexomechanics.api.util.StatTrackUtil;
 
 import com.nexomc.nexo.api.NexoItems;
-
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.format.TextDecoration;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -21,12 +17,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 import java.util.WeakHashMap;
 
 public class StatTrackListener implements Listener {
-
     private static final String BLOCKS_MINED = "blocks_mined";
     private static final String PLAYERS_KILLED = "players_killed";
 
@@ -48,8 +42,6 @@ public class StatTrackListener implements Listener {
         if (event.isCancelled()) return;
 
         Player player = event.getPlayer();
-        if (player == null) return; // this can actually be triggered by other devs, i.e. fire new BlockBreakEvent(block, null)
-
         tryUpdateStats(player, BLOCKS_MINED);
     }
 
@@ -96,28 +88,9 @@ public class StatTrackListener implements Listener {
         queueLoreUpdate(item, () -> setLore(item, mechanic, statName, newValue));
     }
 
-    public void setLore(ItemStack item, StatTrack mechanic, String statName, long value) {
-        StatTrack.StatInfo info = mechanic.getStat(statName);
-        if (info == null) return;
-
+    private void setLore(ItemStack item, StatTrack mechanic, String statName, long value) {
         ItemMeta meta = item.getItemMeta();
-        if (meta == null) return;
-
-        List<Component> lore = meta.lore();
-        if (lore == null) return;
-
-        int line = info.line();
-        if (line < 0 || line >= lore.size()) return;
-
-        // Replace %value% in configured template and parse minimessage
-        String formatted = info.format().replace("%value%", String.valueOf(value));
-        Component newLine = MiniMessage.miniMessage().
-                deserialize(formatted)
-                .decoration(TextDecoration.ITALIC, false);
-
-        lore.set(line, newLine);
-        meta.lore(lore);
+        StatTrackUtil.setLore(meta, mechanic, statName, value);
         item.setItemMeta(meta);
     }
-
 }

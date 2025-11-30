@@ -1,12 +1,12 @@
-package org.Autumn.moreNexoMechanics.mechanics.listeners;
+package org.autumn.morenexomechanics.mechanics.listeners;
 
-import org.Autumn.moreNexoMechanics.mechanics.factories.SwappableEnchantsFactory;
-import org.Autumn.moreNexoMechanics.mechanics.SwappableEnchants;
-import org.Autumn.moreNexoMechanics.Util.EnchantUtil.Lookup;
-import org.Autumn.moreNexoMechanics.Util.EnchantUtil.KeyIter;
-import org.Autumn.moreNexoMechanics.Util.EnchantUtil.Policy;
-import org.Autumn.moreNexoMechanics.Util.EnchantUtil.Roman;
-import org.Autumn.moreNexoMechanics.Util.MsgUtil;
+import org.autumn.morenexomechanics.mechanics.factories.SwappableEnchantsFactory;
+import org.autumn.morenexomechanics.mechanics.SwappableEnchants;
+import org.autumn.morenexomechanics.Util.EnchantUtil.Lookup;
+import org.autumn.morenexomechanics.Util.EnchantUtil.KeyIter;
+import org.autumn.morenexomechanics.Util.EnchantUtil.Policy;
+import org.autumn.morenexomechanics.Util.EnchantUtil.Roman;
+import org.autumn.morenexomechanics.Util.MsgUtil;
 
 import com.nexomc.nexo.api.NexoItems;
 import com.nexomc.nexo.utils.logs.Logs;
