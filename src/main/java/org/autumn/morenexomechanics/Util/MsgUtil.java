@@ -1,4 +1,4 @@
-package org.Autumn.moreNexoMechanics.Util;
+package org.autumn.morenexomechanics.Util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

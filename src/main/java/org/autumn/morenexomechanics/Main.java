@@ -1,16 +1,17 @@
-package org.Autumn.moreNexoMechanics;
+package org.autumn.morenexomechanics;
 
 /* Factories */
-import org.Autumn.moreNexoMechanics.mechanics.factories.SwappableEnchantsFactory;
-import org.Autumn.moreNexoMechanics.mechanics.factories.PotionAurasFactory;
-import org.Autumn.moreNexoMechanics.mechanics.factories.StatTrackFactory;
+import org.autumn.morenexomechanics.api.MechanicFactories;
+import org.autumn.morenexomechanics.mechanics.factories.SwappableEnchantsFactory;
+import org.autumn.morenexomechanics.mechanics.factories.PotionAurasFactory;
+import org.autumn.morenexomechanics.mechanics.factories.StatTrackFactory;
 
 /* Listeners */
-import org.Autumn.moreNexoMechanics.mechanics.listeners.SwappableEnchantsListener;
-import org.Autumn.moreNexoMechanics.mechanics.listeners.StatTrackListener;
+import org.autumn.morenexomechanics.mechanics.listeners.SwappableEnchantsListener;
+import org.autumn.morenexomechanics.mechanics.listeners.StatTrackListener;
 
 /* Runnables */
-import org.Autumn.moreNexoMechanics.mechanics.runnables.PotionAurasTask;
+import org.autumn.morenexomechanics.mechanics.runnables.PotionAurasTask;
 
 /* Nexo */
 import com.nexomc.nexo.api.events.NexoMechanicsRegisteredEvent;
@@ -37,6 +38,13 @@ public final class Main extends JavaPlugin {
         swappableEnchantsFactory = new SwappableEnchantsFactory();
         potionAurasFactory = new PotionAurasFactory();
         statTrackFactory = new StatTrackFactory();
+
+        /* Init for the API */
+        MechanicFactories.bootstrap(
+                swappableEnchantsFactory,
+                potionAurasFactory,
+                statTrackFactory
+        );
 
         /* Registering */
         registerListeners();

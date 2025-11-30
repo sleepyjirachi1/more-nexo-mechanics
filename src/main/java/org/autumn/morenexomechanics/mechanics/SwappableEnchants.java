@@ -1,4 +1,4 @@
-package org.Autumn.moreNexoMechanics.mechanics;
+package org.autumn.morenexomechanics.mechanics;
 
 import com.nexomc.nexo.mechanics.Mechanic;
 import com.nexomc.nexo.mechanics.MechanicFactory;

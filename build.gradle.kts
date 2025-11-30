@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.sleepyjirachi1"
-version = "0.2.1"
+version = "0.2.2"
 
 java {
     toolchain {
@@ -30,10 +30,8 @@ dependencies {
     compileOnly("net.kyori:adventure-api:4.25.0")
     compileOnly("com.nexomc:nexo:1.15.0")
 
-    // Kotlin runtime
+    /* Annotations & Kotlin */
     compileOnly("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
-
-    // Helper libraries
     compileOnly("org.jetbrains:annotations:26.0.2")
     compileOnly("org.projectlombok:lombok:1.18.36")
     annotationProcessor("org.projectlombok:lombok:1.18.36")

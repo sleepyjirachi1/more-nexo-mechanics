@@ -1,7 +1,7 @@
-package org.Autumn.moreNexoMechanics.mechanics.runnables;
+package org.autumn.morenexomechanics.mechanics.runnables;
 
-import org.Autumn.moreNexoMechanics.mechanics.factories.PotionAurasFactory;
-import org.Autumn.moreNexoMechanics.mechanics.PotionAuras;
+import org.autumn.morenexomechanics.mechanics.factories.PotionAurasFactory;
+import org.autumn.morenexomechanics.mechanics.PotionAuras;
 
 import com.nexomc.nexo.api.NexoItems;
 import com.nexomc.nexo.utils.logs.Logs;
